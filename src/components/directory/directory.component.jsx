@@ -1,8 +1,8 @@
-import react from "react";
+import React from "react";
 import MenuItem from "../menu-item/menu-item.component";
 import './directory.style.scss';
 
-class Directory extends react.Component {
+class Directory extends React.Component {
     constructor() {
         super();
 
@@ -11,29 +11,34 @@ class Directory extends react.Component {
                 {
                     title: 'HATS',
                     imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-                    id: 1
+                    id: 1,
+                    linkUrl: 'hats'
                 },
                 {
                     title: 'JACKETS',
                     imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-                    id: 2
+                    id: 2,
+                    linkUrl: ''
                 },
                 {
                     title: 'SNEAKERS',
                     imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-                    id: 3
+                    id: 3,
+                    linkUrl: 'sneakers'
                 },
                 {
-                    title: 'WOMEN',
+                    title: '',
                     imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
                     id: 4,
-                    size: 'large'
+                    size: 'large',
+                    linkUrl: ''
                 },
                 {
                     title: 'MEN',
                     imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
                     id: 5,
-                    size: 'large'
+                    size: 'large',
+                    linkUrl: ''
                 }
             ]
         }
@@ -43,9 +48,9 @@ class Directory extends react.Component {
         return(
             <div className="directory-menu">
                 {
-                    this.state.sections.map(({title, imageUrl, id, size}) => {
+                    this.state.sections.map(({ id, ...sectionProps}) => {
                         return(
-                            <MenuItem key={id} title={title} imageUrl={imageUrl} size={size}/>
+                            <MenuItem key={id} {...sectionProps}/>
                         )
                     })
                 }
