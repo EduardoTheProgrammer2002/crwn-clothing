@@ -1,10 +1,10 @@
-import { Switch ,Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
-import './App.css';
+import './App.scss';
 
 import Header from './components/header/header.component';
-import HomePage from './page/homepage/homepage.component';
-import ShopPage from './page/shop/shop.component';
+import Home from './routes/home/home.component';
+import ShopPage from './routes/shop/shop.component';
 
 
 
@@ -12,10 +12,10 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Switch>
-        <Route exact path='/' component={HomePage}/>
-        <Route path='/shop' component={ShopPage}/>
-      </Switch>
+      <Routes>
+        <Route exact path='/' element={<Home />}/>
+        <Route path='/shop' element={<ShopPage />}/>
+      </Routes>
     </div>
   );
 }

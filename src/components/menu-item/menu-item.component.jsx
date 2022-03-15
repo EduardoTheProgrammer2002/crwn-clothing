@@ -1,4 +1,3 @@
-import { withRouter } from 'react-router-dom';
 import './menu-item.style.scss'
 
 const MenuItem = ({ title, imageUrl, size }) => {
@@ -13,4 +12,4 @@ const MenuItem = ({ title, imageUrl, size }) => {
     );
 };
 
-export default withRouter(MenuItem);
+export default MenuItem;
