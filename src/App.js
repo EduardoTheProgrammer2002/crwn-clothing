@@ -1,5 +1,4 @@
-import React from 'react';
-import { Switch ,Route, Link } from 'react-router-dom';
+import { Switch ,Route} from 'react-router-dom';
 
 import './App.css';
 
@@ -9,7 +8,7 @@ import ShopPage from './page/shop/shop.component';
 
 
 
-function App() {
+const App = () => {
   return (
     <div>
       <Header />
