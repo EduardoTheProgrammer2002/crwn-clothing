@@ -2,19 +2,19 @@ import { Routes, Route } from 'react-router-dom';
 
 import './App.scss';
 
-import Header from './components/header/header.component';
+import Navigation from './routes/navigation/navigation.component';
 import Home from './routes/home/home.component';
 import ShopPage from './routes/shop/shop.component';
-
 
 
 const App = () => {
   return (
     <div>
-      <Header />
       <Routes>
-        <Route exact path='/' element={<Home />}/>
-        <Route path='/shop' element={<ShopPage />}/>
+        <Route path='/' element={<Navigation/>}>
+          <Route index element={<Home />}></Route>
+          <Route path='shop' element={<ShopPage />}/>
+        </Route>
       </Routes>
     </div>
   );
